@@ -1,0 +1,25 @@
+<div *ngIf="loggedIn()" class="col-md-2 side-nav row-fluid">
+  <p class="nav-title">Navigation</p>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/dashboard">
+        <i class="glyphicon glyphicon-th"></i>
+        Dashboard
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/courses">
+        <i class="glyphicon glyphicon-list-alt"></i>
+        Courses
+      </a>
+      <ul>
+        <li class="nav-item" *ngIf="isLecturer()">
+          <a class="nav-link" routerLink="/courses/add">
+            <i class="glyphicon glyphicon-list-alt"></i>
+            Add a course
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
